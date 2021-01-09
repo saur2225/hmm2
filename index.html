@@ -36,6 +36,7 @@
   * Author: BootstrapMade.com
   * License: https://bootstrapmade.com/license/
   ======================================================== -->
+  <script>(function(w, d) { w.CollectId = "5ff0b65d2558920eb98190b6"; var h = d.head || d.getElementsByTagName("head")[0]; var s = d.createElement("script"); s.setAttribute("type", "text/javascript"); s.async=true; s.setAttribute("src", "https://collectcdn.com/launcher.js"); h.appendChild(s); })(window, document);</script>
 </head>
 <style>
 .modal-dialog{
@@ -64,10 +65,64 @@
 
 }
 
+.spinner-wrapper {
+position: fixed;
+top: 0;
+left: 0;
+right: 0;
+bottom: 0;
+background-color: #ff6347;
+z-index: 999999;
+
+}
+@media screen and (max-width:800px){
+  .spinner{
+    width:40px;
+    height:40px;
+  }
+}
+@media screen and (min-width:800px){
+  .spinner{
+    width:80px;
+    height:80px;
+  }
+}
+.spinner {
+
+  background-color:white;
+
+  position: absolute;
+  top: 48%;
+  left: 48%;
+  -webkit-animation: sk-rotateplane 1.2s infinite ease-in-out;
+  animation: sk-rotateplane 1.2s infinite ease-in-out;
+}
+
+@-webkit-keyframes sk-rotateplane {
+  0% { -webkit-transform: perspective(120px) }
+  50% { -webkit-transform: perspective(120px) rotateY(180deg) }
+  100% { -webkit-transform: perspective(120px) rotateY(180deg)  rotateX(180deg) }
+}
+
+@keyframes sk-rotateplane {
+  0% { 
+    transform: perspective(120px) rotateX(0deg) rotateY(0deg);
+    -webkit-transform: perspective(120px) rotateX(0deg) rotateY(0deg) 
+  } 50% { 
+    transform: perspective(120px) rotateX(-180.1deg) rotateY(0deg);
+    -webkit-transform: perspective(120px) rotateX(-180.1deg) rotateY(0deg) 
+  } 100% { 
+    transform: perspective(120px) rotateX(-180deg) rotateY(-179.9deg);
+    -webkit-transform: perspective(120px) rotateX(-180deg) rotateY(-179.9deg);
+  }
+}
 </style>
 <body>
-  
-  <!-- ======= Header ======= -->
+  <div class="spinner-wrapper">
+    <div class="spinner"></div>
+    </div>
+    <!-- ======= Header ======= -->
+
   <header id="header" class="fixed-top" style="background-color:#EB5D1E">
     <div class="container-fluid d-flex">
 
@@ -82,7 +137,6 @@
           <li class="active"><a href="index.html">Home</a></li>
           <li><a href="#about">About Us</a></li>
           <li><a href="#services">Services</a></li>
-          <li><a href="#portfolio">Portfolio</a></li>
           <li><a href="#team">Team</a></li>
           <li class="drop-down"><a href="">Drop Down</a>
             <ul>
@@ -169,7 +223,9 @@
           <div class="col-lg-6 pt-5 pt-lg-0">
             <h3 data-aos="fade-up">Best and Easiest way to download results</h3>
             <p data-aos="fade-up" data-aos-delay="100">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Duis aute irure dolor in reprehenderit
+              Protechfield is an online platform that helps schools and colleges to manage their administrative and technological needs efficiently. We help them in developing their website and app. It enables them to publish their results online for easy accessibility to students and parents. 
+              We also provide an app in order to promote easy and efficient interaction among parents and teachers. It also helps parents in monitoring students' performances. 
+              
             </p>
             <div class="row">
               <div class="col-md-6" data-aos="fade-up" data-aos-delay="100">
@@ -237,7 +293,7 @@
     </section><!-- End Services Section -->
 
     <!-- ======= Portfolio Section ======= -->
-    <section id="portfolio" class="portfolio">
+    <section id="portfolio" class="portfolio" data-aos="zoom-in" >
       <div class="container">
         <div class="section-title" data-aos="fade-up">
           <h2>Sample</h2>
@@ -549,7 +605,7 @@
     </section><!-- End Team Section -->
 
     <!-- ======= Clients Section ======= -->
-    <section id="clients" class="clients section-bg">
+    <!-- <section id="clients" class="clients section-bg">
       <div class="container">
 
         <div class="section-title" data-aos="fade-up">
@@ -569,7 +625,7 @@
         </div>
 
       </div>
-    </section><!-- End Clients Section -->
+    </section>End Clients Section -->
 
     <!-- ======= Contact Us Section ======= -->
     <section id="contact" class="contact">
@@ -723,7 +779,18 @@
      
     </div>
   </footer><!-- End Footer -->
-
+  </div>
+  <script>
+    $(document).ready(function() {
+    //Preloader
+    preloaderFadeOutTime = 500;
+    function hidePreloader() {
+    var preloader = $('.spinner-wrapper');
+    preloader.fadeOut(preloaderFadeOutTime);
+    }
+    hidePreloader();
+    });
+    </script>
   <a href="#" class="back-to-top"><i class="icofont-simple-up"></i></a>
 
   <!-- Vendor JS Files -->
